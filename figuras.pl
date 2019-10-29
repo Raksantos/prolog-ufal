@@ -10,9 +10,19 @@ coluna(C):- write("X"), C1 is C - 1, coluna(C1).
 coluna1(0):- write("").
 coluna1(C):- write("X"), C1 is C - 1, coluna1(C1).
 
+% imprime "O" C vezes, sem quebra de linha no final
+
+coluna2(0):-nl.
+coluna2(C):- write("O"), C1 is C - 1, coluna2(C1).
+
 % imprime quadrado de L linhas e C colunas
 quadrado(0, _).
 quadrado(L, C):- coluna(C), L1 is L - 1, quadrado(L1, C).
+
+% imprime um número de N linhas e C colunas
+
+retangulo(0, _).
+retangulo(L, C):- coluna2(C), L1 is L - 1, retangulo(L1, C).
 
 % triangulos
 triangulo(0).
@@ -70,3 +80,9 @@ paralelogramo(C, D):-   C1 is C - 1 + 1,
                         espaco(E), coluna1(C1),
                         coluna1(D),
                         coluna(D1).
+
+janela(0, _, _).
+janela(L, C, J):- C1 is (C - J)//2, coluna1(C1), espaco(J), coluna(C1), L1 is L - 1, janela(L1, C, J). 
+
+?-triangulo5(6, 6), janela(4, 12, 6).
+
