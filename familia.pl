@@ -21,3 +21,5 @@ aunt(X, Y) :- siblings(X, Z) , mother(Z, Y).
 
 cousins(X, Y) :- uncle(Z, X) , father(Z, Y).
 cousins(X, Y) :- uncle(Z, X) , mother(Z, Y).
+
+?-cousins(rodrigo, ronald).
