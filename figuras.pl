@@ -10,7 +10,7 @@ coluna(C):- write("X"), C1 is C - 1, coluna(C1).
 coluna1(0):- write("").
 coluna1(C):- write("X"), C1 is C - 1, coluna1(C1).
 
-% imprime "O" C vezes, sem quebra de linha no final
+% imprime "O" C vezes, com quebra de linha no final
 
 coluna2(0):-nl.
 coluna2(C):- write("O"), C1 is C - 1, coluna2(C1).
