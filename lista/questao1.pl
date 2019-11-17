@@ -41,7 +41,13 @@ aprovado(joao, informatica_e_sociedade).
 aprovado(emanuela, informatica_e_sociedade).
 aprovado(fabiola, informatica_e_sociedade).
 
-verifica(X) :- aprovado(X, informatica_e_sociedade) , aprovado(X, fisica1).
+verifica(X) :- aprovado(X, informatica_e_sociedade) , aprovado(X, fisica1), write(x), nl, fail.
 
-?- verifica(pedro) ; verifica(joao) ; verifica(fabio) ; verifica(paulo) ; 
-verifica(ana) ; verifica(maria) ; verifica(fabiola) ; verifica(emanuela).
+?- verifica(pedro).
+?- verifica(paulo).
+?- verifica(joao).
+?- verifica(fabio).
+?- verifica(emanuela).
+?- verifica(maria).
+?- verifica(ana).
+?- verifica(fabiola).
